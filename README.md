@@ -12,11 +12,11 @@
 > 随着学习的不断深入，我会慢慢充实这个仓库，点关注不迷路。✨
 
 ### 推荐教程
-* [官网]https://flutter.dev/docs/get-started
-* [中文网]https://flutterchina.club
+* [官网](https://flutter.dev/docs/get-started)
+* [中文网](https://flutterchina.club)
 * [插件搜索](https://pub.flutter-io.cn/)
 * [视频教程](https://www.bilibili.com/video/BV1S4411E7LY?from=search&seid=3316132610922137116)
-
+* [个人实战项目](https://github.com/haolizi/electricity_flutter)
 ...
 
 ### 总结目录

@@ -50,7 +50,7 @@ if (route != null) {
     }
 ```
 
-默认clearStack为false，replace也会false，这不就是我们常见的Navigator跳转future = Navigator.push(context, route);context是是直接传入的上下文，那么route呢？
+默认clearStack为false，replace也是false，这不就是我们常见的Navigator跳转future = Navigator.push(context, route); context是是直接传入的上下文，那么route呢？
 ```
 RouteMatch routeMatch = matchRoute(context, path,
     transitionType: transition,
@@ -117,7 +117,7 @@ Handler homeDetailsHandler = Handler(
 ```
 
 ### 总结
-至此，如果我们依次以下代码，应该就能够跳转到商品详情页了（/users/1234 是临时命名）。
+至此，如果我们依次调用以下代码，应该就能够跳转到商品详情页了（/users/1234 是临时命名）。
 ```
 final router = Router();
 
@@ -131,4 +131,4 @@ Handler homeDetailsHandler = Handler(
 
 router.navigateTo(context, "/users/1234", transition: TransitionType.fadeIn);
 ```
-设想下，一个项目肯定不可能只一个跳转，既然代码相同，我们是不是可以抽离出来统一调用呢？详见下一篇[Fluro使用教程（二）](FLURO2.md)。
+设想下，一个项目肯定不可能只有一个跳转，每次跳转就写一堆相同代码，是不是违背了封装思想？既然代码相同，我们是不是可以抽离出来统一调用呢？详见下一篇[Fluro使用教程（二）](FLURO2.md)。

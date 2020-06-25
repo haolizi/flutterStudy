@@ -112,4 +112,12 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+```
+// 跳转商品详情
+ApplicationRouter.router.navigateTo(context,'/detail?id=3', transition:TransitionType.fadeIn);
+
+// 跳转订单支付
+ApplicationRouter.router.navigateTo(context,'/order/pay', transition:TransitionType.fadeIn);
+```
 至此，Fluro的使用基本完成。

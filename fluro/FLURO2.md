@@ -2,13 +2,13 @@
 
 * [Fluro使用教程（一）](FLURO1.md)
 
-### Fluro封装
+## Fluro封装
 我们新建三个dart文件（在[项目](https://github.com/haolizi/electricity_flutter)中路径config/router文件夹下）。
 * router_application.dart  // 初始化路由
 * router_handler.dart      // handler集合
 * routers.dart             // 路由集合
 
-#### router_application.dart
+### router_application.dart
 统一封装路由的初始化。
 ```
 import 'package:fluro/fluro.dart';
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
 ```
 ApplicationRouter.router.navigateTo(context,'/users/1234', transition:TransitionType.fadeIn);
 ```
-#### router_handler.dart
+### router_handler.dart
 在上篇Handler源码中可以看到HandleFunc需要传入Map<String, List<string> parameters>,也就是我们跳转页面需要传的值，类型是字符串，所以我们可以这样写：
 
 ```
@@ -68,7 +68,7 @@ Handler orderPayHandler = Handler(
   }
 );
 ```
-#### routers.dart
+### routers.dart
 跳转页面多的话，也会有很多路由配置，统一写进routers.dart中方便管理。
 ```
 class Routes {
@@ -92,6 +92,7 @@ class Routes {
 }
 ```
 MyApp中还需调用configureRoutes来完成全局配置和路由定义
+```
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -110,5 +111,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+```
 至此，Fluro的使用基本完成。

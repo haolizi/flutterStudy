@@ -21,4 +21,4 @@
 
 ### 总结目录
 * [Fluro用法](fluro/FLURO1.md)
-* [Provider用法](provider/demo/README.md)
+* [Provider用法](provider/README.md)

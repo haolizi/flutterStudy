@@ -1,7 +1,6 @@
 # Fluro使用教程（-）
 
 * [Fluro使用教程（二）](FLURO2.md)
-* Fluro使用教程（三）
 
 > 本文主要介绍Fluro的使用，至于什么是Fluro，为什么使用Fluro，还请自行搜索。
 > 本文会以本人的【[练手项目](https://github.com/haolizi/electricity_flutter)】为实例，一步步展开，如果有需要，还望前去clone，对比代码，方便理解。
@@ -131,4 +130,4 @@ Handler homeDetailsHandler = Handler(
 
 router.navigateTo(context, "/users/1234", transition: TransitionType.fadeIn);
 ```
-设想下，一个项目肯定不可能只有一个跳转，每次跳转就写一堆相同代码，是不是违背了封装思想？既然代码相同，我们是不是可以抽离出来统一调用呢？详见下一篇[Fluro使用教程（二）](FLURO2.md)。
+设想下，一个项目肯定不可能只有一个界面跳转，既然代码相同，我们是不是可以抽离出来统一调用呢？详见下一篇[Fluro使用教程（二）](FLURO2.md)。

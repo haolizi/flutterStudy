@@ -7,6 +7,15 @@
 <p align='center'><img src="images/screen.gif">
 
 ### 前提须知
+添加依赖：
+```
+dependencies:
+  flutter:
+    sdk: flutter
+
+  provider: ^4.1.3
+```
+
 常用方法大概有以下几个，我会以Demo为例，逐个介绍。
 ```
 MultiProvider                  管理多个共享数据类
@@ -17,3 +26,5 @@ Consumer<T>                    通过指定模板参数，然后在内部自动�
 Selector<A,S>                  针对某个值小范围rebuild视图
 ```
 ### ChangeNotifierProvider 
+ChangeNotifierProvider用于向监听器发送通知，类似于Observable，当有值更改后，它将rebuild Consumer和Provider.of<T>(context)动态监听的地方。
+

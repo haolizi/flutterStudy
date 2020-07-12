@@ -20,10 +20,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-        title: '商品列表',
-        theme: new ThemeData(
-          primaryColor: Colors.red,
-        ),
-        home: new Tabs());
+      title: '商品列表',
+      theme: new ThemeData(
+        primaryColor: Colors.red,
+      ),
+      home: new Tabs(),
+    );
   }
 }

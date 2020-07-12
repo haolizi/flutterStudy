@@ -17,7 +17,7 @@
 * [插件搜索](https://pub.flutter-io.cn/)
 * [视频教程](https://www.bilibili.com/video/BV1S4411E7LY?from=search&seid=3316132610922137116)
 * [个人实战项目](https://github.com/haolizi/electricity_flutter)
-...
+* ...
 
 ### 总结目录
 * [Fluro用法](fluro/FLURO1.md)

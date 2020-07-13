@@ -4,7 +4,7 @@
 > 本文主要介绍Provider的简单使用，至于什么是Provider，为什么使用Provider，Provider底层如何实现？还请自行搜索。
 
 ### Demo效果
-<div align=center>![image](images/screen.gif)
+<div align="center">![image](images/screen.gif)
 
 ### 前提须知
 添加依赖：

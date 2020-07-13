@@ -24,6 +24,7 @@ notifyListeners()              触发相关监听器
 Provider.of<T>(context).value  获取数据
 Consumer<T>                    通过指定模板参数，然后在内部自动调用ChangeNotifierProvider.of获取相应的数据，rebuild视图
 Selector<A,S>                  针对某个值小范围rebuild视图
+...
 ```
 
 ### ChangeNotifierProvider 

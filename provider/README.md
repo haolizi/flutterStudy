@@ -34,7 +34,7 @@ ChangeNotifierProvider用于向监听器发送通知，类似于Observable，当
 ### MultiProvider
 用来管理多个共享数据，包裹根节点。
 
-为了方便管理，我将MultiProvider包裹的ChangeNotifierProvider统一放在了main文件中。有人认为这样做，是不合理的架构，对于庞大产品来说会使项目更杂乱，应该对于相应页面单独管理。嗯，怎么说呢，个人认为，在不影响产品性能的情况下，怎么舒服，怎么能快速开发就是合理的。
+为了方便管理，我将MultiProvider包裹的ChangeNotifierProvider统一放在了main文件中。有人认为这样做，是不合理的架构，对于庞大产品来说会使项目更杂乱，所以要对需要用到的页面单独管理。嗯，怎么说呢，个人认为，在不影响产品性能的情况下，怎么舒服，怎么能快速开发就是合理的。
 
 代码如下：
 ```
@@ -86,7 +86,7 @@ List<CartInfoModel> collectList = Provider.of<CartProvider>(context, listen: fal
 ### Consumer
 当notifyListeners通知有数据变化时，所有和Consumer相关的方法都会被触发调用，然后rebuild其包裹的所有子孙widget，并重新赋值。不知大家是否看出一些问题，如果我们只需要更改某一条数据，而用Consumer包裹了所有widget，是不是平白耗费了大量性能。所以Consumer要尽可能的用在最内层的widget。
 
-demo中有两处地方使用Consumer。
+demo中有三处地方使用Consumer。
 * 首页用Consumer来获取item的收藏状态，所以仅需要包在item外层。
 ```
 class HomePage extends StatelessWidget {
@@ -146,6 +146,7 @@ class CollectPage extends StatelessWidget {
   ...
 }
 ```
+* tabs页面中包在了最外层，因为要监听整个tabs的选中状态，同购物车页面，代码就不单独列出了。
 
 ### Selector
 估计是考虑到Consumer的问题，Provider提供了Selector方法，它可以更精确的读取到某个数据的变化，比如购物车页面中商品总价的监听。

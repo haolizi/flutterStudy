@@ -182,4 +182,4 @@ class CollectPage extends StatelessWidget {
 }
 ```
 
-常用的方法大概也就这几个，具体使用请下载demo细看。如果还不够理解，这里推荐一篇博客![Flutter状态管理](https://juejin.im/post/5ed3af0f6fb9a047f2298c71)
+常用的方法大概也就这几个，具体使用请下载demo细看。如果还不够理解，这里推荐一篇博客[Flutter状态管理](https://juejin.im/post/5ed3af0f6fb9a047f2298c71)。

@@ -1,5 +1,5 @@
 import 'providers/tab_index_provider.dart';
-import 'providers/collect_provider.dart';
+import 'providers/cart_provider.dart';
 import 'package:flutter/material.dart';
 import './config/tabs.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +9,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => CurrentPageProvider()),
-        ChangeNotifierProvider(create: (context) => CollectProvider()),
+        ChangeNotifierProvider(create: (context) => CartProvider()),
       ],
       child: MyApp(),
     ),

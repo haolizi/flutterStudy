@@ -7,7 +7,7 @@ class CartInfoModel {
   String id;
   String title;
   String detail;
-  String price;
+  double price;
   bool isCheck;
 
   CartInfoModel({this.id, this.title, this.detail, this.price, this.isCheck});

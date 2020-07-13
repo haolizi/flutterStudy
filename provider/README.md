@@ -77,7 +77,7 @@ class CartProvider with ChangeNotifier {
 ```
 
 ### Provider.of
-用来访问model中数据，比如我想获取购物车中数据：
+用来访问model中数据，比如我想获取购物车列表数据：
 ```
 // listen默认会true，也能起到监听数据变化的作用，这里只需要获取数据，所以设为false
 List<CartInfoModel> collectList = Provider.of<CartProvider>(context, listen: false).cartList;

@@ -8,7 +8,8 @@ import 'package:provider/provider.dart';
 class Tabs extends StatelessWidget {
   final List<BottomNavigationBarItem> bottomTabs = [
     BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('首页')),
-    BottomNavigationBarItem(icon: Icon(Icons.collections), title: Text('购物车')),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.shopping_cart), title: Text('购物车')),
   ];
   final List<String> _titleList = ['商品列表', '购物车'];
   final List<Widget> tabBodies = [HomePage(), CollectPage()];

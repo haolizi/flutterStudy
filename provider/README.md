@@ -8,7 +8,7 @@
 
 ### 前提须知
 添加依赖：
-```
+```dart
 dependencies:
   flutter:
     sdk: flutter
@@ -17,7 +17,7 @@ dependencies:
 ```
 
 常用方法大概有以下几个，我会以Demo中商品添加购物车为例，逐个进行介绍。
-```
+```dart
 MultiProvider                  管理多个共享数据类
 ChangeNotifierProvider         监听到共享状态（数据）改变时重新构建Widget树
 notifyListeners()              触发相关监听器
@@ -36,7 +36,7 @@ ChangeNotifierProvider用于向监听器发送通知，类似于Observable，当
 为了方便管理，我将MultiProvider包裹的ChangeNotifierProvider统一放在了main文件中。有人认为这样做，是不合理的架构，对于庞大产品来说会使项目更杂乱，所以要对需要用到的页面单独管理。嗯，怎么说呢，个人认为，在不影响产品性能的情况下，怎么舒服，怎么能快速开发就是合理的。
 
 代码如下：
-```
+```dart
 void main() {
   runApp(
     MultiProvider(
@@ -55,7 +55,7 @@ void main() {
 
 ### notifyListeners
 当有数据发生变化，需要通知页面更新时，调用notifyListeners()，所有和Consumer相关的方法都会被触发调用。如cart_provider文件中，购物车数据发生变化时：
-```
+```dart
 class CartProvider with ChangeNotifier {
   List<CartInfoModel> cartList = []; // 收藏列表
   double allPrice = 0;
@@ -77,7 +77,7 @@ class CartProvider with ChangeNotifier {
 
 ### Provider.of
 用来访问model中数据，比如我想获取购物车列表数据：
-```
+```dart
 // listen默认会true，也能起到监听数据变化的作用，这里只需要获取数据，所以设为false
 List<CartInfoModel> collectList = Provider.of<CartProvider>(context, listen: false).cartList;
 ```
@@ -87,7 +87,7 @@ List<CartInfoModel> collectList = Provider.of<CartProvider>(context, listen: fal
 
 demo中有三处地方使用Consumer。
 * 首页用Consumer来获取item的收藏状态，所以仅需要包在item外层。
-```
+```dart
 class HomePage extends StatelessWidget {
   final List<CartInfoModel> list = [];
   @override
@@ -115,7 +115,7 @@ class HomePage extends StatelessWidget {
 ```
 
 * 购物车页面，因为购物车列表数据是动态变化的，所以需要包在最外层。
-```
+```dart
 class CollectPage extends StatelessWidget {
   const CollectPage({Key key}) : super(key: key);
 
@@ -145,7 +145,7 @@ class CollectPage extends StatelessWidget {
 
 ### Selector
 估计是考虑到Consumer的问题，Provider提供了Selector方法，它可以更精确的读取到某个数据的变化，比如购物车页面中商品总价的监听。
-```
+```dart
   ...
   Widget _bottomWidget(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -178,4 +178,6 @@ class CollectPage extends StatelessWidget {
 }
 ```
 
-常用的方法大概也就这几个，具体使用请下载demo细看。由于对Provider的理解还不够深入，所以总结的可能不够全面，如有大佬路过，还望能指点一二。
+常用的方法大概就这几个，具体使用请下载demo细看。如果想了解更多，这里推荐一些博客：
+* [推荐1](https://zhuanlan.zhihu.com/p/70280813)。
+* [推荐2](https://juejin.im/post/5ed3af0f6fb9a047f2298c71)。

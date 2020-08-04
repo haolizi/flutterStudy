@@ -68,7 +68,7 @@ class ItemWidget extends StatelessWidget {
     );
   }
 
-  // 商品价格
+  // 商品介绍
   Widget _goodsDetailWidget(CartInfoModel model) {
     return Container(
       alignment: Alignment.centerLeft,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/cart_provider.dart';
-import '../model/cart_model.dart';
 import '../widgets/goods_list_item_widget.dart';
 
 class CollectPage extends StatelessWidget {
@@ -13,12 +12,10 @@ class CollectPage extends StatelessWidget {
       children: <Widget>[
         // 购物车，使用Consumer监听数据变化，rebuild整个列表
         Consumer<CartProvider>(builder: (context, child, value) {
-          List<CartInfoModel> collectList =
-              Provider.of<CartProvider>(context, listen: false).cartList;
           return ListView.builder(
-            itemCount: collectList.length,
+            itemCount: child.cartList.length,
             itemBuilder: (context, index) {
-              return ItemWidget(model: collectList[index], isCollect: true);
+              return ItemWidget(model: child.cartList[index], isCollect: true);
             },
           );
         }),

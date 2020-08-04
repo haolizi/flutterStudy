@@ -24,9 +24,7 @@ class HomePage extends StatelessWidget {
   // Consumer监听收藏状态，rebuild单个item
   Widget _itemWidget(BuildContext context, CartInfoModel model) {
     return Consumer<CartProvider>(builder: (context, child, value) {
-      List<CartInfoModel> collectList =
-          Provider.of<CartProvider>(context, listen: false).cartList;
-      bool isCollect = collectList.contains(model);
+      bool isCollect = child.cartList.contains(model);
       return ItemWidget(model: model, isCollect: isCollect);
     });
   }

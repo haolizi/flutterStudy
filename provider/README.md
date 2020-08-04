@@ -107,9 +107,7 @@ class HomePage extends StatelessWidget {
   // Consumer监听收藏状态，rebuild单个item
   Widget _itemWidget(BuildContext context, CartInfoModel model) {
     return Consumer<CartProvider>(builder: (context, child, value) {
-      List<CartInfoModel> collectList =
-          Provider.of<CartProvider>(context, listen: false).cartList;
-      bool isCollect = collectList.contains(model);
+      bool isCollect = child.cartList.contains(model);
       return ItemWidget(model: model, isCollect: isCollect);
     });
   }
@@ -127,12 +125,10 @@ class CollectPage extends StatelessWidget {
       children: <Widget>[
         // 购物车，使用Consumer监听数据变化，rebuild整个列表
         Consumer<CartProvider>(builder: (context, child, value) {
-          List<CartInfoModel> collectList =
-              Provider.of<CartProvider>(context, listen: false).cartList;
           return ListView.builder(
-            itemCount: collectList.length,
+            itemCount: child.cartList.length,
             itemBuilder: (context, index) {
-              return ItemWidget(model: collectList[index], isCollect: true);
+              return ItemWidget(model: child.cartList[index], isCollect: true);
             },
           );
         }),
